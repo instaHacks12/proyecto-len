@@ -1,0 +1,104 @@
+.character-card {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  }
+  .character-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #3333ff);
+    background-size: 400% 400%;
+    animation: bgAnimation 5s infinite alternate;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+  }
+  
+  /* Animación del fondo */
+  @keyframes bgAnimation {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+  }
+  
+  /* Contenedor principal para aplicar animaciones en scroll */
+  .container {
+    min-height: 200vh; /* Hace que la página sea más larga para el efecto de scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Estilo del título con animación */
+  h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    position: relative; /* Mantiene el título visible */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-30px);
+    text-align: center;
+    margin-bottom: 90px;
+  }
+  
+  /* Animación de entrada del título */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Tarjetas de personajes */
+  .character-card {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Efecto futurista translúcido */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Efecto al pasar el mouse sobre las tarjetas */
+  .character-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+  }
+  
+  /* Imagen de los personajes */
+  .character-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  /* Animación al hacer scroll en toda la página */
+  .scroll-effect {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+  
+  /* Elementos visibles cuando el usuario los ve */
+  .scroll-visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
